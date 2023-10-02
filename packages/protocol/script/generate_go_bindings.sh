@@ -26,10 +26,9 @@ function extract_abi_json() {
 }
 
 function gen_go_bindings() {
-    abigen --abi "${l1_abi_json}" --type TaikoL1Client \
-        --abi "${l2_abi_json}" --type TaikoL2Client \
-        --abi "${taiko_token_abi_json}" --type TaikoToken \
-        --pkg bindings --out "${go_bindings_dir}/contract.go"
+    abigen --abi "${l1_abi_json}" --type TaikoL1Client --pkg bindings --out "${go_bindings_dir}/gen_taiko_l1.go.go"
+    abigen --abi "${l2_abi_json}" --type TaikoL2Client --pkg bindings --out "${go_bindings_dir}/gen_taiko_l2.go.go"
+    abigen --abi "${taiko_token_abi_json}" --type TaikoToken --pkg bindings --out "${go_bindings_dir}/gen_taiko_token.go"
 
     echo "🍻 Go contract bindings generated!"
 }
