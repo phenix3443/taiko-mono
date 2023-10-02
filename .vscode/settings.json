@@ -6,5 +6,6 @@
   "[solidity]": {
     "editor.defaultFormatter": "NomicFoundation.hardhat-solidity"
   },
-  "solidity.formatter": "forge"
+  "solidity.formatter": "forge",
+  "cSpell.words": ["stretchr", "taiko"]
 }
