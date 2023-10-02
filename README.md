@@ -1,3 +1,5 @@
+> [Differences](./differ.md) from the official repo.
+
 <p align="center">
   <img src="./packages/branding/RGB SVG (For Digital Use)/Taiko Icon/taiko-icon-blk.svg" width="80" alt="Logo for Taiko" />
 </p>
