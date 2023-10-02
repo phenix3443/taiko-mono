@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+run_when_file_changed() {
+    if (git diff --cached --name-only | grep --quiet "$1"); then
+        $2
+    fi
+}
+
+generate_abi() {
+    cd packages/protocol && pnpm bindings
+}
+
+run_when_file_changed "packages/protocol/contracts" generate_abi

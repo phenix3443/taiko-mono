@@ -20,7 +20,7 @@
     "test:coverage": "forge coverage --report lcov",
     "test:genesis": "FOUNDRY_PROFILE=genesis ./genesis/generate_genesis.test.sh",
     "upgrade": "./script/upgrade_to.sh",
-    "gen-bindings": "./scripts/gen_go_bindings.sh"
+    "bindings": "./script/gen_go_bindings.sh"
   },
   "keywords": [
     "ZKP",
