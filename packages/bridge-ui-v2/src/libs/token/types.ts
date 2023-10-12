@@ -14,21 +14,20 @@ export enum TokenType {
 }
 
 export type Token = {
-  name: string;
-  addresses: Record<string, Address>;
-  symbol: string;
-  decimals: number;
   type: TokenType;
+  name: string;
+  symbol: string;
+  addresses: Record<string, Address>;
+  decimals: number;
   logoURI?: string;
   imported?: boolean;
   mintable?: boolean;
+  balance?: bigint;
+  uri?: string;
 };
 
-export type TokenEnv = {
-  name: string;
-  address: Address;
-  symbol: string;
-  balance: bigint;
+export type NFT = Token & {
+  tokenId: number;
 };
 
 export type GetCrossChainAddressArgs = {

@@ -24,10 +24,20 @@ interface EcosystemData {
 
 const ecosystemData: EcosystemData[] = [
   {
+    icon: "/images/ecosystem/ait.png",
+    name: "AIT Protocol",
+    link: "https://ait.tech/",
+    description:
+      "AIT Protocol is the first’s Web3 data infrastructure focusing on AI data annotations, leverages blockchain technology to deliver a trustless and cross-border labor market being strategically incentivized by crypto economics and having instant cross-nation payment settlements.",
+    filters: [],
+    isLive: true,
+  },
+  {
     icon: "/images/ecosystem/alphamint.png",
     name: "Alphamint",
     link: "https://www.alphamint.online/",
-    description: "Multichain NFT marketplace to create, sell and buy ERC-721 tokens.",
+    description:
+      "Multichain NFT marketplace to create, sell and buy ERC-721 tokens.",
     filters: [],
     isLive: true,
   },
@@ -53,6 +63,15 @@ const ecosystemData: EcosystemData[] = [
     link: "https://www.brianknows.org",
     description:
       "Brian is a collection of AI models, trained on web3-related data, that allows everyone to learn and interact with the decentralized world by prompting.",
+    filters: [],
+    isLive: true,
+  },
+  {
+    icon: "/images/ecosystem/covalent.png",
+    name: "Covalent",
+    link: "https://www.covalenthq.com/",
+    description:
+      "Covalent's industry-leading Unified API brings visibility to billions of data points across 200+ blockchains for developers building multi-chain applications.",
     filters: [],
     isLive: true,
   },
@@ -346,7 +365,7 @@ const ecosystemData: EcosystemData[] = [
     description:
       "Rubic enhances interoperability through network bridging and cross-chain dev tools for omnichain dApps. Users access diverse assets via varied DEXs under a unified interface with optimized cross-chain transactions.",
     filters: [],
-    isLive: false,
+    isLive: true,
   },
   {
     icon: "/images/ecosystem/rubydex.png",
@@ -385,9 +404,19 @@ const ecosystemData: EcosystemData[] = [
   },
   {
     icon: "/images/ecosystem/taiko.svg",
-    name: "Swap",
+    name: "Swap v2",
     link: "https://swap.jolnir.taiko.xyz",
-    description: "Swap is a dapp that lets you swap tokens on Taiko.",
+    description:
+      "Swap v2 is a dapp that lets you swap tokens on Taiko (fork of Uniswap v2).",
+    filters: [],
+    isLive: true,
+  },
+  {
+    icon: "/images/ecosystem/taiko.svg",
+    name: "Swap v3",
+    link: "https://swap-v3.jolnir.taiko.xyz",
+    description:
+      "Swap v3 is a dapp that lets you swap tokens on Taiko (fork of Uniswap v3).",
     filters: [],
     isLive: true,
   },
@@ -439,7 +468,8 @@ const ecosystemData: EcosystemData[] = [
     icon: "/images/ecosystem/xverse.png",
     name: "Xverse",
     link: "https://taiko-test.xverse.fi/?chain=taiko_testnet",
-    description: "Stablecoin Project, using Uniswap V3 LP token. With CDP mechanism, LP NFT of stable coin pair will become collateral of our Stable coin.",
+    description:
+      "Stablecoin Project, using Uniswap V3 LP token. With CDP mechanism, LP NFT of stable coin pair will become collateral of our Stable coin.",
     filters: [],
     isLive: true,
   },
@@ -577,13 +607,15 @@ export function EcosystemSection() {
 function FilterLabel({ text, activeFilter, setActiveFilter }) {
   const isActive = activeFilter === text;
 
-  const buttonStyles = `border rounded-full py-1 px-4 text-sm focus:outline-none transition-colors duration-200 font-bold ${isActive
-    ? "bg-gray-300 text-black"
-    : "bg-white text-gray-700 dark:bg-black dark:text-gray-300"
-    } ${isActive
+  const buttonStyles = `border rounded-full py-1 px-4 text-sm focus:outline-none transition-colors duration-200 font-bold ${
+    isActive
+      ? "bg-gray-300 text-black"
+      : "bg-white text-gray-700 dark:bg-black dark:text-gray-300"
+  } ${
+    isActive
       ? "hover:bg-gray-400"
       : "hover:bg-neutral-100 dark:hover:bg-neutral-800"
-    }`;
+  }`;
 
   return (
     <button className={buttonStyles} onClick={() => setActiveFilter(text)}>

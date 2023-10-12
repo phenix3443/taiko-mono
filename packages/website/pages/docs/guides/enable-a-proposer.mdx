@@ -78,6 +78,11 @@ If you are not running a local prover, then you can specify a prover from the [p
 
 - `PROVER_ENDPOINTS`
 
+To select multiple prover endpoints at the same time
+```shell
+PROVER_ENDPOINTS=<PROVER_ENDPOINT_1>,<PROVER_ENDPOINT_2>,<PROVER_ENDPOINT_3>
+```
+
 ### Check proposer status logs
 
 To see if your proposer is running correctly or has errors run:
@@ -99,6 +104,16 @@ if your proposer successfully proposed a block, your logs should show: `📝 Pro
 You can check all commands to see proposer logs in the [node runner manual](/docs/manuals/node-runner-manual#view-client-proposer-logs).
 
 </Steps>
+
+## Tokenomics
+
+The proposer orders (sequences) transactions in a block. Transaction fees to be included into a block are paid in ETH.
+To extract as much MEV (Maximal Extractable Value) as possible paid in ETH, each proposer will try to search the mempool to:
+```
+- ✅ Fit as many valid transactions into a block as possible
+- 💰 Include transactions with the highest fees
+``` 
+The proposer must then deliver their proposed blocks to a prover.
 
 ## Videos
 
